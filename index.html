@@ -21,10 +21,10 @@
     </audio>
 
     <div class="flex-container">
-        <div class="flex-element">Hi Hat <br> A</div>
-        <div class="flex-element">Snare<br> S</div>
-        <div class="flex-element">Kick <br>D</div>
-        <div class="flex-element">Ride <br> F</div>
+        <div class="flex-element" id="hihatBtn">Hi Hat <br> A</div>
+        <div class="flex-element" id="snareBtn">Snare<br> S</div>
+        <div class="flex-element" id="kickBtn">Kick <br>D</div>
+        <div class="flex-element" id="rideBtn">Ride <br> F</div>
     </div>
     <br>
     <div class="wrapper">
@@ -36,7 +36,11 @@
         let snare = document.getElementById('snare');
         let kick = document.getElementById('kick');
         let ride = document.getElementById('ride');
-        
+
+        let hihatBtn = document.getElementById('hihatBtn');
+        let snareBtn = document.getElementById('snareBtn');
+        let kickBtn = document.getElementById('kickBtn'); 
+        let rideBtn = document.getElementById('rideBtn');       
 
         addEventListener('keydown', function(e){
             console.log(e.keyCode);
@@ -54,6 +58,26 @@
                 ride.play();
             }
         })
+
+        hihatBtn.addEventListener('click', function(e){          
+                hihat.currentTime = 0;
+                hihat.play();
+        })
+
+        snareBtn.addEventListener('click', function(e){          
+                snare.currentTime = 0;
+                snare.play();
+        })
+
+        kickBtn.addEventListener('click', function(e){          
+                kick.currentTime = 0;
+                kick.play();
+        })
+
+        rideBtn.addEventListener('click', function(e){          
+                ride.currentTime = 0;
+                ride.play();
+        })        
 
         function jam(){
             let jam = document.getElementById('jam');
