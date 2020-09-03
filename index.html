@@ -1,15 +1,67 @@
 <!DOCTYPE html>
-<html>
 <head>
-    <title>Web Programming</title>
-    <script>
-        function suma(){
-            console.log(2+2);
-        }
-    </script>
+    <title>Jam</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-    <button onclick="suma()">Suma</button>
+    <audio id="hihat">
+        <source src="./Drum/hihat.ogg" type="audio/ogg">
+    </audio>
+    <audio id="snare">
+        <source src="./Drum/snare.mp3" type="audio/mp3">
+    </audio>
+    <audio id="kick">
+        <source src="./Drum/kick.wav" type="audio/wav">
+    </audio>
+    <audio id="ride">
+        <source src="./Drum/ride.wav" type="audio/wav">
+    </audio>
+    <audio id="jam">
+        <source src="./Drum/song1.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="flex-container">
+        <div class="flex-element">Hi Hat <br> A</div>
+        <div class="flex-element">Snare<br> S</div>
+        <div class="flex-element">Kick <br>D</div>
+        <div class="flex-element">Ride <br> F</div>
+    </div>
+    <br>
+    <div class="wrapper">
+        <button class="jam" onclick="jam()">Lets Jam!</button>
+    </div>
+
+    <script>
+        let hihat = document.getElementById('hihat');
+        let snare = document.getElementById('snare');
+        let kick = document.getElementById('kick');
+        let ride = document.getElementById('ride');
+        
+
+        addEventListener('keydown', function(e){
+            console.log(e.keyCode);
+            if(e.keyCode == 65){
+                hihat.currentTime = 0;
+                hihat.play();
+            }else if(e.keyCode == 83){
+                snare.currentTime = 0;
+                snare.play();
+            }else if(e.keyCode == 68){
+                kick.currentTime = 0;
+                kick.play();
+            }else if(e.keyCode == 70){
+                ride.currentTime = 0;
+                ride.play();
+            }
+        })
+
+        function jam(){
+            let jam = document.getElementById('jam');
+            jam.currentTime = 0;
+            jam.play();
+        }
+       
+    </script>
+
 </body>
 </html>
